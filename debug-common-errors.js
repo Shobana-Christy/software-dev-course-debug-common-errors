@@ -52,7 +52,6 @@ console.log( typeof numbers [2]);
 
 // Solution 1
 function isPrime(num) {
-  if (num == 1) return true;
   if (num < 2) return false;
   for (let i = 2; i <= num; i++) {
     if (num % i === 0) {
@@ -66,7 +65,7 @@ function isPrime(num) {
   return false; 
 }
 
-const num = 18;
+const num = 7;
 let result = isPrime(num);
 if(result) {
   result = "";
