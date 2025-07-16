@@ -24,39 +24,58 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
+// Syntax error - The string inside is not wrapped in double quotes and the parentheses is missing at the end.
 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
+console.log( typeof numbers [2]);
 
 // What’s Wrong?
-
+// Runtime Error - the value inside the array is string 'NaN' which cannot perform with arithmetic operators.
+//if this is changed to number, this code will run smoothly.
 
 
 // Program C (Logic Error)
 // Description:
 // This snippet of code is supposed to check if a given number is prime (i.e., divisible only by 1 and itself). However, it incorrectly marks some numbers as prime or not prime.
 
+// Solution 1
 function isPrime(num) {
+  if (num == 1) return true;
   if (num < 2) return false;
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i <= num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      if(num === i) {
+        return true; 
+      } else {
+        return false;
+      }
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return false; 
 }
 
-console.log(isPrime(7)); // Expected true but gets false
+const num = 18;
+let result = isPrime(num);
+if(result) {
+  result = "";
+} else {
+  result = "NOT";
+}
 
+console.log("The number " + num + " is " + result + " a Prime number" ); 
 // What’s Wrong?
+// It's logical error. Missing few conditions.
+
+
